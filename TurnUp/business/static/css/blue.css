@@ -523,6 +523,8 @@ html {
   -webkit-perspective: 1000px;
           perspective: 1000px;
   background-image: url(../img/bg/Galaxy_background.png);
+    -webkit-background-size: cover;
+    background-size: cover;
   top: 0;
   right: 0;
   bottom: 0;
