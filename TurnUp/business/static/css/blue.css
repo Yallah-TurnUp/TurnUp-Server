@@ -28,6 +28,9 @@
  * helper
  * --------------------------------------------------
  */
+#star_animation {
+    display: block;
+}
 #cloudy {
     width: auto;
     height: 75vh;
@@ -1010,6 +1013,9 @@ input[type=radio] {
     }
 }
 @media screen and (max-width: 767px) {
+    #star_animation {
+        display: none;
+    }
     .section-full {
         /*background-image: url(../img/bg/Galaxy_background.png);*/
     }
