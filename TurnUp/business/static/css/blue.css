@@ -41,6 +41,8 @@
     height: 82vh;
     z-index: 5;
     display: none;
+    margin-left: auto;
+    margin-right: auto;
 }
 #base-dark {
     width: 100vw;
