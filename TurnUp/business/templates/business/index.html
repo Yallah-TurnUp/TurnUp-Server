@@ -12,24 +12,19 @@
           <div id="siteBg" class="site-bg">
               <div class="site-bg-animation layer" data-depth="0.30"></div>
               <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
-          </div>
-          <div class="section">
-              <img src="../../static/img/item/cloudy_1.png" style="width: 20vw; float: right; margin: 0 180px 0 0;"/>
-          </div>
-          <div class="section">
-              <img src="../../static/img/item/cloudy_1.png" style="width: 23vw; float: right; margin: -20px 80px 0 0;"/>
-          </div>
-          <div class="section">
-              <img src="../../static/img/item/cloudy_1.png" style="width: 17vw; float: left; margin: -40px 0 0 160px;"/>
-          </div>
-
-          <div>
-              <img id="slide" src="../../static/img/item/rocket.png" style="height: 21vh; width: auto; z-index: 3; position: absolute; right: 0; bottom: 120px; left: 44.8vw;"/>
-              <img id="rocket" src="../../static/img/item/rocket.png" style="height: 21vh; width: auto; position: absolute; right: 0; bottom: 90px; left: 44.8vw; display: none; z-index: 3;"/>
-          </div>
-          <img id="base-white" src="../../static/img/bg/cloud_base_L.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: -6vh; left: 0; overflow: hidden; z-index: 2;"/>
-          <img id="base-dark" src="../../static/img/bg/cloud_background_L.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 5vh; left: 0; overflow: hidden; z-index: 1;"/>
-
+              <img id="cloudy" src="../../static/img/bg/clouds.png"/>
+              <img id="cloudy_S" src="../../static/img/bg/cloudy_S.png"/>
+              <img id="slide" class="rocket" src="../../static/img/item/rocket.png"/>
+              <img id="rocket" class="rocket" src="../../static/img/item/rocket.png" style="display: none;"/>
+              <div class="section" id="thumbs" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-top: 60vh; display: none;">
+                  <button type="submit" class="thumb_button" style="float: left; margin-left: 15%;"><img class="thumb_button_img" src="../../static/img/item/thumbdown.png"/></button>
+                  <button type="submit" class="thumb_button" style="float: right; margin-right: 15%;"><img class="thumb_button_img" src="../../static/img/item/thumbup.png"/></button>
+              </div>
+          <!--<img id="base-white" src="../../static/img/bg/cloud_base_New.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 0; left: 0; overflow: hidden; z-index: 2;"/>-->
+          <!--<img id="base-dark" src="../../static/img/bg/cloud_background_L.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 5vh; left: 0; overflow: hidden; z-index: 1;"/>-->
+          <img id="base-dark" src="../../static/img/bg/cloud_back.png" />
+          <img id="base-dark_S" src="../../static/img/bg/cloud_back_S.png"/>
+        </div>
         <!--<div id="contact" class="section align-c">-->
             <!--<form onsubmit="return submitContactUs('{{csrf_token}}');" data-toggle="validator" id="ContactUsForm" role="form" method="post" action="">{% csrf_token %}-->
                 <!--<div class="section-heading">-->
@@ -59,7 +54,6 @@
                 <!--<div class="contact_message" style="margin-top: 60px;">We've got your message and will contact you shortly, thank you!</div>-->
             <!--</div>-->
         <!--</div>-->
-    </div>
 
     <script src="../../static/js/bootstrap.js"></script>
     <script src="../../static/js/jquery-1.9.1.js"></script>
@@ -75,7 +69,9 @@
     </script>
     <script>
     $(document).ready(function () {
-        setTimeout(function (){$("#rocket").fadeIn();
+        setTimeout(function (){$("#rocket").fadeIn(1000);
+        }, 6000);
+        setTimeout(function (){$("#thumbs").fadeIn(1000);
         }, 6000);
     });
     </script>

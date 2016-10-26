@@ -28,18 +28,73 @@
  * helper
  * --------------------------------------------------
  */
+#cloudy {
+    width: auto;
+    height: 75vh;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+    display: block;
+}
+#cloudy_S {
+    width: auto;
+    height: 80vh;
+    z-index: 5;
+    display: none;
+}
+#base-dark {
+    width: 100vw;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+    display: block;
+}
+#base-dark_S {
+    width: 100vw;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+    display: none;
+}
+.thumb_button {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+}
+.thumb_button_img {
+    height: 10vh;
+    width: auto;
+}
 #slide {
     position: absolute;
-    top: 70vh;
-    width: 100px;
-    height: 100px;
+    top: 75vh;
     background: transparent;
     -webkit-animation: slide 5s forwards;
     -webkit-animation-delay: 1.5s;
     animation: slide 5s forwards;
     animation-delay: 1.5s;
 }
-
+.rocket {
+    height: 21vh;
+    width: auto;
+    z-index: 3;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 6vh;
+}
 @-webkit-keyframes slide {
     100% { top: -21vh; }
 }
@@ -337,7 +392,9 @@ html {
 }
 .container {
   background: transparent;
-  max-width: 1050px;
+    width: 95vw;
+    position: relative;
+    height: 15vh;
 }
 /**
  * iconbox
@@ -408,19 +465,15 @@ html {
 
 .section {
   position: relative;
-  padding: 50px 0;
 }
 .section-full {
-    height: 100vh;
-    width: auto;
     margin: 0;
     /*padding-top: 250px;*/
-    /*background: url(../img/bg/Galaxy_background.png) no-repeat center center;*/
     background-size: cover;
 }
 @media (min-width: 992px) {
   .section {
-    padding: 80px 0;
+    padding: 100px 0;
   }
 }
 
@@ -836,7 +889,6 @@ input[type=radio] {
 }
 @media screen and (max-width: 991px) {
     .section-full {
-        margin: 0;
         /*background-image: url(../img/bg/Galaxy_background.png);*/
         }
     .section-heading.align-c-sm-max .divider {
@@ -958,6 +1010,18 @@ input[type=radio] {
 @media screen and (max-width: 767px) {
     .section-full {
         /*background-image: url(../img/bg/Galaxy_background.png);*/
+    }
+    #cloudy {
+        display: none;
+    }
+    #cloudy_S {
+        display: block;
+    }
+    #base-dark {
+        display: none;
+    }
+    #base-dark_S {
+        display: block;
     }
     #map-canvas {
         height: 60vh;
