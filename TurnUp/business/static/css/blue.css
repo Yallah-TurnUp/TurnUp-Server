@@ -28,6 +28,16 @@
  * helper
  * --------------------------------------------------
  */
+#star_back{
+    display: block;
+    background: url(../img/bg/sparkles2.png);
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+}
 #star_animation {
     display: block;
 }
@@ -540,17 +550,16 @@ html {
 }
 .button_splash {
     font-family: 'Gotham', 'Helvetica Neue', 'Open Sans', sans-serif;
-    font-size: 20px;
+    font-size: 16px;
     color: #fff;
     background: #3a81ca;
     text-transform: uppercase;
     font-weight: 300;
     border: none;
-    padding: 12px 30px;
+    padding: 8px 26px;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
-    width: 260px;
     outline: none;
     text-align: center;
 }
@@ -1013,6 +1022,9 @@ input[type=radio] {
     }
 }
 @media screen and (max-width: 767px) {
+    #star_back {
+        display: block;
+    }
     #star_animation {
         display: none;
     }
@@ -1084,9 +1096,6 @@ input[type=radio] {
     .deliver-background {
         height: 60px;
         width: 60px;
-    }
-    #main_content {
-        margin-top: -100px;
     }
     .business-box-media p {
         display: none;

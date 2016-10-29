@@ -493,9 +493,9 @@ var $ = jQuery.noConflict();
         if (!isMobile && !isIE9) {
           var config = {
             origin: 'bottom',
-            distance: '60px',
-            duration: 1000,
-            delay: 100,
+            distance: '30px',
+            duration: 700,
+            delay: 300,
             rotate: {x :0, y :0, z :0},
             opacity: 0,
             scale: 0,
