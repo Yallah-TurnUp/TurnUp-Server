@@ -28,6 +28,37 @@
  * helper
  * --------------------------------------------------
  */
+#thumbs {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-top: 20vh;
+}
+#base-food {
+    width: 100vw;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+    display: block;
+}
+#base-food-S {
+    width: 100vw;
+        height: auto;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: hidden;
+        z-index: -1;
+    display: none;
+}
 #star_back{
     display: block;
     background: url(../img/bg/sparkles2.png);
@@ -1022,6 +1053,9 @@ input[type=radio] {
     }
 }
 @media screen and (max-width: 767px) {
+    #thumbs {
+        margin-top: 50vh;
+    }
     #star_back {
         display: block;
     }
@@ -1037,10 +1071,10 @@ input[type=radio] {
     #cloudy_S {
         display: block;
     }
-    #base-dark {
+    #base-dark, #base-food{
         display: none;
     }
-    #base-dark_S {
+    #base-dark_S, #base-food-S{
         display: block;
     }
     #map-canvas {

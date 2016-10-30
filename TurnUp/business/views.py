@@ -8,9 +8,12 @@ def index(request):
     context = {}
     return render(request, 'business/index.html', context)
 
+def food(request):
+    context = {}
+    return render(request, 'business/food.html', context)
 
 # Contact us page
-def contact_link(request):
+def database_link(request):
     result = True
 
     your_name = request.POST.get('your_name', '')

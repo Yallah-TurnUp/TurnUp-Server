@@ -27,9 +27,9 @@
         </div>
         <img id="slide" class="rocket" src="../../static/img/item/rocket.png"/>
         <img id="rocket" class="rocket" src="../../static/img/item/rocket.png" style="display: none;"/>
-        <div class="section" id="thumbs" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-top: 60vh; display: none;">
-            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="z-index: 5; float: left; margin-left: 15%;"><img class="thumb_button_img" src="../../static/img/item/thumbdown.png"/></button>
-            <button type="button" class="thumb_button" style="float: right; margin-right: 15%; z-index: 5; "><img class="thumb_button_img" src="../../static/img/item/thumbup.png"/></button>
+        <div class="section" id="thumbs_cloud" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-top: 65vh; display: none;">
+            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="z-index: 5; float: left; margin-left: 12%;"><img class="thumb_button_img" src="../../static/img/item/thumbdown.png"/></button>
+            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 12%; z-index: 5; "><img class="thumb_button_img" src="../../static/img/item/thumbup.png"/></button>
         </div>
         <!--<img id="base-white" src="../../static/img/bg/cloud_base_New.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 0; left: 0; overflow: hidden; z-index: 2;"/>-->
         <!--<img id="base-dark" src="../../static/img/bg/cloud_background_L.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 5vh; left: 0; overflow: hidden; z-index: 1;"/>-->
@@ -46,6 +46,7 @@
                     <div class="modal-body" style="text-align:center; width:100%;">
                         <div id='common_form'>
                             <div style="font-size:24px; margin-bottom:24px; margin-top: 100px; color:#626262;"><strong>Please wait while we build this portion...</strong></div>
+                            <a href="http://dariuspjm.wixsite.com/turnup">Join Us!</a>
                             <div class="loading-spinner"
                                  style="width: 80%; margin: 40px auto 35px;">
                                 <div class="progress progress-striped active">
@@ -82,7 +83,7 @@
     $(document).ready(function () {
         setTimeout(function (){$("#rocket").fadeIn(800);
         }, 5000);
-        setTimeout(function (){$("#thumbs").fadeIn(800);
+        setTimeout(function (){$("#thumbs_cloud").fadeIn(800);
         }, 5000);
     });
 </script>
