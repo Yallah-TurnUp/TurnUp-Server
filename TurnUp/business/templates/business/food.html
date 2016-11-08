@@ -14,7 +14,7 @@
 <body>
 <!--content Start -->
 <div class="section-full align-c">
-    <div id="siteBg" class="site-bg">
+    <div id="siteBg" class="site-bg" style="background: none;">
         <div id="star_animation" class="site-bg-animation layer" data-depth="0.30"></div>
         <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
         <div id="main_content" data-sr="bottom"></div>
@@ -23,7 +23,7 @@
             <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 12%; z-index: 5; "><img class="thumb_button_img" src="../../static/img/bg/thumbs_u.png"/></button>
         </div>
         <img id="base-food" src="../../static/img/bg/food_desktop.png" />
-        <img id="base-food-S" src="../../static/img/bg/dining_table_mobile.png"/>
+        <img id="base-food-S" src="../../static/img/bg/food_mobile.png"/>
 
         <div class="modal fade" id="ContactUs" role="dialog" tabindex="-1">
             <div class="modal-dialog" role="document">
@@ -32,20 +32,51 @@
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
                         <h1 class="modal-title">WELCOME</h1>
                     </div>
-                    <div class="modal-body" style="text-align:center; width:100%;">
-                        <div id='common_form'>
-                            <div style="font-size:24px; margin-bottom:24px; margin-top: 100px; color:#626262;"><strong>Please wait while we build this portion...</strong></div>
-                            <a href="http://dariuspjm.wixsite.com/turnup">Join Us!</a>
-                            <div class="loading-spinner"
-                                 style="width: 80%; margin: 40px auto 35px;">
-                                <div class="progress progress-striped active">
-                                    <div class="progress-bar" style="width: 100%;"></div>
+                        <div class="modal-body" style="text-align:center; width:100%;">
+                            <div class="container" style="width: 100%; align-content: center;">
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off" checked>
+                                        <span>15:00</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span>15:30</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span>16:00</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span>16:30</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span>17:30</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" autocomplete="off">
+                                        <span>18:00</span>
+                                    </label>
                                 </div>
                             </div>
+                            <div id="load-spin" class="container" style="display: none; width: 100%; align-content: center;">
+                                <div class="contact_message">Please wait while we process your information...</div>
+                                <div class="loading-spinner"  style="width: 80%; margin-left: auto; margin-right: auto;">
+                                    <div class="progress progress-striped active">
+                                        <div class="progress-bar" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='tdd' style="display: none;">
+                                <img id="form_complete_img" src="../../static/img/item/green_tick.png">
+                                <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
+                                <a href="http://dariuspjm.wixsite.com/turnup">Join Us!</a>
+                            </div>
                         </div>
-                    </div>
                     <div class="modal-footer">
-                        <button type="submit" class="button_splash">TurnUp</button>
+                        <button type="submit" onclick="submitSuccess();" class="button_splash">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -69,6 +100,15 @@
         setTimeout(function (){$("#thumbs").fadeIn(800);
         }, 5000);
     });
+
+    function submitSuccess () {
+        $('#common_form').hide();
+        $('#load-spin').show();
+        setTimeout(function (){$('#load-spin').hide();}, 2000);
+        setTimeout(function (){$('#tdd').show();}, 2000);
+        setTimeout(function (){$('#tdd').hide();}, 5500);
+        setTimeout(function () {$('#common_form').fadeIn(10);},5500);
+        }
 </script>
 <!--content End -->
 </body>

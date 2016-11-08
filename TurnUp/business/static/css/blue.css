@@ -28,6 +28,12 @@
  * helper
  * --------------------------------------------------
  */
+.btn span.glyphicon {
+	opacity: 0;
+}
+.btn.active span.glyphicon {
+	opacity: 1;
+}
 #thumbs {
     display: none;
     position: absolute;
@@ -58,6 +64,16 @@
         overflow: hidden;
         z-index: -1;
     display: none;
+}
+input {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin:0;
+  vertical-align: bottom;
+  position: relative;
+  top: -1px;
+  *overflow: hidden;
 }
 #star_back{
     display: block;
@@ -117,7 +133,7 @@
     background: transparent;
 }
 .thumb_button_img {
-    height: 10vh;
+    height: 40vh;
     width: auto;
 }
 #slide {
@@ -888,7 +904,6 @@ input[type=radio] {
     font-weight: 500;
     font-size:24px;
     margin-bottom:24px;
-    margin-top: 120px;
     color:#626262;
 }
 #submit {
