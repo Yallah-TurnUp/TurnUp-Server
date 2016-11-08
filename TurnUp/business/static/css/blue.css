@@ -133,7 +133,7 @@ input {
     background: transparent;
 }
 .thumb_button_img {
-    height: 40vh;
+    height: 20vh;
     width: auto;
 }
 #slide {
@@ -948,6 +948,10 @@ input[type=radio] {
     margin:0 auto;
 }
 @media screen and (max-width: 991px) {
+    .thumb_button_img {
+    height: 12vh;
+    width: auto;
+    }
     .section-full {
         /*background-image: url(../img/bg/Galaxy_background.png);*/
         }
