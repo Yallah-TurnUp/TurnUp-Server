@@ -22,60 +22,64 @@
         <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
         <div id="star_back"></div>
         <div id="main_content" data-sr="bottom">
-            <img id="cloudy" src="../../static/img/bg/clouds.png" />
-            <img id="cloudy_S" src="../../static/img/bg/cloudy_S.png" />
+            <img id="cloudy" src="../../static/img/bg/float_cloud_desktop.png" />
+            <img id="cloudy_S" src="../../static/img/bg/float_cloud_mobile.png" />
         </div>
         <img id="slide" class="rocket" src="../../static/img/item/rocket.png"/>
         <img id="rocket" class="rocket" src="../../static/img/item/rocket.png" style="display: none;"/>
         <div class="section" id="thumbs_cloud" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-top: 65vh; display: none;">
             <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="z-index: 5; float: left; margin-left: 15%; margin-top: -10vh;"><img class="thumb_button_img" src="../../static/img/item/thumbs_d.png"/></button>
-            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 15%; z-index: 5; margin-top: -10vh;"><img class="thumb_button_img" src="../../static/img/item/thumbs_u.png"/></button>
+            <button type="button" class="thumb_button shakee" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 15%; z-index: 5; margin-top: -10vh;"><img class="thumb_button_img" src="../../static/img/item/thumbs_u.png"/></button>
         </div>
-        <!--<img id="base-white" src="../../static/img/bg/cloud_base_New.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 0; left: 0; overflow: hidden; z-index: 2;"/>-->
-        <!--<img id="base-dark" src="../../static/img/bg/cloud_background_L.png" style="width: 100vw; height: auto; position: absolute; right: 0; bottom: 5vh; left: 0; overflow: hidden; z-index: 1;"/>-->
-        <img id="base-dark" src="../../static/img/bg/cloud_desktop.png" />
-        <img id="base-dark_S" src="../../static/img/bg/cloud_mobile.png"/>
+        <img id="base-dark" src="../../static/img/bg/cloud_back.png" />
+        <img id="base-dark_S" src="../../static/img/bg/cloud_back_S.png"/>
 
         <div class="modal fade" id="ContactUs" role="dialog" tabindex="-1">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h1 class="modal-title">WELCOME</h1>
+                        <img src="../../static/img/bg/Logo.png" style="width: 100px; height: auto;"/>
                     </div>
 
-                    <div class="modal-body" style="text-align:center; width:100%; height: 60vh;">
-                        <div id='common_form'>
-                            <div class="container" style="width: 100%; align-content: center;">
-                                <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off" checked>
-                                        <span>15:00</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
-                                        <span>15:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
-                                        <span>16:00</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
-                                        <span>16:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
-                                        <span>17:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
-                                        <span>18:00</span>
-                                    </label>
-                                </div>
+                    <div class="modal-body" style="text-align:center; height: 40vh;">
+                        <div id="common_form" class="container" style="width: 100%; align-content: center;">
+                            <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off" checked>
+                                    <span>15:00</span>
+                                </label>
+                                <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span>15:30</span>
+                                </label>
+                                <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span>16:00</span>
+                                </label>
+                                <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span>16:30</span>
+                                </label>
+                                <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span>17:30</span>
+                                </label>
+                                <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                    <input type="checkbox" autocomplete="off">
+                                    <span>18:00</span>
+                                </label>
+                            </div>
+                            <div class="section-content">
+                                <h3>Event information:</h3>
+                                <p>This is NUS IDC entreprenuer, bah bah bah bah</p>
+                            </div>
+                            <div class="section-content">
+                                <a>Can put in more related information here</a>
                             </div>
                         </div>
-                        <div id="load-spin" class="container" style="display: none; width: 100%; align-content: center;">
+
+                        <div id="load-spin" class="container" style="display: none; width: 100%; align-content: center; margin-top: 15vh;">
                             <div class="contact_message">Please wait while we process your information...</div>
                             <div class="loading-spinner"  style="width: 80%; margin-left: auto; margin-right: auto;">
                                 <div class="progress progress-striped active">
@@ -83,14 +87,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='tdd' style="display: none;">
-                            <img id="form_complete_img" src="../../static/img/item/green_tick.png">
+                        <div id='tdd' style="display: none; margin-top: 5vh;">
+                            <img id="form_complete_img" src="../../static/img/item/green_tick.png"/>
                             <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
                             <a href="http://dariuspjm.wixsite.com/turnup">Join Us!</a>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" onclick="submitSuccess();" class="button_splash">CONFIRM</button>
+                    <div class="modal-footer" style="height: 10vh;">
+                        <button id="footer_button" type="submit" onclick="submitSuccess();postData()" class="button_splash">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -107,24 +111,32 @@
 <script>
     $( window ).load(function() {
         $('#main_content').show();
-        $(document).trigger('is-loaded');
+        setTimeout(function (){$(document).trigger('is-loaded');
+        }, 1000);
     });
 
     $(document).ready(function () {
         setTimeout(function (){$("#rocket").fadeIn(800);
-        }, 5000);
+        }, 6000);
         setTimeout(function (){$("#thumbs_cloud").fadeIn(100);
-        }, 5000);
+        }, 4000);
     });
 
     function submitSuccess () {
         $('#common_form').hide();
+        $('#footer_button').hide();
         $('#load-spin').show();
-        setTimeout(function (){$('#load-spin').hide();}, 2000);
-        setTimeout(function (){$('#tdd').show();}, 2000);
-        setTimeout(function (){$('#tdd').hide();}, 5500);
-        setTimeout(function () {$('#common_form').fadeIn(10);},5500);
+        setTimeout(function (){$('#load-spin').hide();}, 4000);
+        setTimeout(function (){$('#tdd').show();}, 4000);
         }
+
+    function postData () {
+        var selected = new Array();
+        $("input:checkbox[name=type]:checked").each(function(){
+            selected.push($(this).val());
+    });
+        console.log(selected);
+    }
 </script>
 <!--content End -->
 </body>
