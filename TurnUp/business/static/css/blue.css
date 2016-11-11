@@ -28,27 +28,65 @@
  * helper
  * --------------------------------------------------
  */
+#thumbs_up {
+    float: right;
+    margin-right: 15%;
+}
+#thumbs_down {
+    float: left;
+    margin-left: 15%;
+}
+#load-spin {
+    display: none;
+    width: 100%;
+    align-content: center;
+    margin-top: 15vh;
+}
+#tdd {
+    display: none;
+    margin-top: 5vh;
+}
+#thumbs_cloud {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin-top: 60vh;
+    display: none;
+}
+#join_us {
+    display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 10%;
+        margin-left: 35%;
+        z-index: 5;
+        height: 65%;
+        width: auto;
+    }
 .shakee {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) both;
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   perspective: 1000px;
 }
 @keyframes shake {
   10%, 90% {
-    transform: translate3d(-1px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
   }
 
   20%, 80% {
-    transform: translate3d(2px, 0, 0);
+    transform: translate3d(3px, 0, 0);
   }
 
   30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
+    transform: translate3d(-5px, 0, 0);
   }
 
   40%, 60% {
-    transform: translate3d(4px, 0, 0);
+    transform: translate3d(5px, 0, 0);
   }
 }
 .btn span.glyphicon {
@@ -149,13 +187,15 @@ input {
     display: none;
 }
 .thumb_button {
+    z-index: 5;
+    margin-top: -10vh;
     cursor: pointer;
     outline: none;
     border: none;
     background: transparent;
 }
 .thumb_button_img {
-    height: 16vh;
+    height: 36vh;
     width: auto;
 }
 #slide {
@@ -163,9 +203,9 @@ input {
     top: 75vh;
     background: transparent;
     -webkit-animation: slide 5s forwards;
-    -webkit-animation-delay: 1.5s;
+    -webkit-animation-delay: 3s;
     animation: slide 5s forwards;
-    animation-delay: 1.5s;
+    animation-delay: 3s;
 }
 .rocket {
     height: 21vh;
@@ -969,9 +1009,28 @@ input[type=radio] {
     margin:0 auto;
 }
 @media screen and (max-width: 991px) {
+    #thumbs_up {
+        margin-right: -5%;
+    }
+    #thumbs_down {
+        margin-left: -5%;
+    }
+    #join_us {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-top: 35%;
+        margin-left: 25%;
+        z-index: -1;
+        height: auto;
+        width: 10%;
+    }
+    .thumb_button {
+        margin-top: 0;
+    }
     .thumb_button_img {
-    height: 12vh;
-    width: auto;
+        height: 23vh;
+        width: auto;
     }
     .section-full {
         /*background-image: url(../img/bg/Galaxy_background.png);*/
@@ -1080,9 +1139,6 @@ input[type=radio] {
         height: 80px;
         margin-top: 16px;
     }
-    .loading-spinner {
-        width: 100vw;
-    }
     .contact_message {
         font-size: 24px;
         margin-top: 20px;
@@ -1090,6 +1146,12 @@ input[type=radio] {
     #form_complete_img {
         width: 180px;
         height: auto;
+    }
+    #tdd {
+        margin-top: 0;
+    }
+    #load-spin{
+        margin-top: 2vh;
     }
 }
 @media screen and (max-width: 767px) {

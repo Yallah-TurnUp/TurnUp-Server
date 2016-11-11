@@ -21,15 +21,20 @@
         <div id="star_animation" class="site-bg-animation layer" data-depth="0.30"></div>
         <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
         <div id="star_back"></div>
-        <div id="main_content" data-sr="bottom">
-            <img id="cloudy" src="../../static/img/bg/float_cloud_desktop.png" />
-            <img id="cloudy_S" src="../../static/img/bg/float_cloud_mobile.png" />
+        <div id="main_content" data-sr="top">
+            <img id="cloudy" src="../../static/img/bg/float_cloud_desktop_design.png" />
+            <img id="join_us" src="../../static/img/bg/invited.png"/>
+            <img id="cloudy_S" src="../../static/img/bg/float_cloud_mobile_design.png" />
         </div>
         <img id="slide" class="rocket" src="../../static/img/item/rocket.png"/>
         <img id="rocket" class="rocket" src="../../static/img/item/rocket.png" style="display: none;"/>
-        <div class="section" id="thumbs_cloud" style="position: absolute; right: 0; left: 0; top: 0; bottom: 0; margin-top: 65vh; display: none;">
-            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="z-index: 5; float: left; margin-left: 15%; margin-top: -10vh;"><img class="thumb_button_img" src="../../static/img/item/thumbs_d.png"/></button>
-            <button type="button" class="thumb_button shakee" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 15%; z-index: 5; margin-top: -10vh;"><img class="thumb_button_img" src="../../static/img/item/thumbs_u.png"/></button>
+        <div class="section" id="thumbs_cloud">
+            <button id="thumbs_down" type="button" class="thumb_button" data-toggle="modal" data-target="#Fail" onclick="submitNo();">
+                <img class="thumb_button_img" src="../../static/img/bg/thumbs_down.png"/>
+            </button>
+            <button id="thumbs_up" type="button" class="thumb_button shakee" data-toggle="modal" data-target="#ContactUs" >
+                <img class="thumb_button_img" src="../../static/img/bg/thumbs_up.png"/>
+            </button>
         </div>
         <img id="base-dark" src="../../static/img/bg/cloud_back.png" />
         <img id="base-dark_S" src="../../static/img/bg/cloud_back_S.png"/>
@@ -79,7 +84,7 @@
                             </div>
                         </div>
 
-                        <div id="load-spin" class="container" style="display: none; width: 100%; align-content: center; margin-top: 15vh;">
+                        <div id="load-spin" class="container" style="align-content: center;">
                             <div class="contact_message">Please wait while we process your information...</div>
                             <div class="loading-spinner"  style="width: 80%; margin-left: auto; margin-right: auto;">
                                 <div class="progress progress-striped active">
@@ -87,15 +92,34 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='tdd' style="display: none; margin-top: 5vh;">
+                        <div id='tdd'>
                             <img id="form_complete_img" src="../../static/img/item/green_tick.png"/>
                             <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
-                            <a href="http://dariuspjm.wixsite.com/turnup">Join Us!</a>
+                            <a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
                         </div>
                     </div>
                     <div class="modal-footer" style="height: 10vh;">
                         <button id="footer_button" type="submit" onclick="submitSuccess();postData()" class="button_splash">CONFIRM</button>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="Fail" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <img src="../../static/img/bg/Logo.png" style="width: 100px; height: auto;"/>
+                    </div>
+
+                    <div class="modal-body" style="text-align:center;">
+                        <div id='rdd'>
+                            <img src="../../static/img/item/green_tick.png" style="width: 180px; height: auto;"/>
+                            <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="height: 10vh;"><a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a></div>
                 </div>
             </div>
         </div>
@@ -112,15 +136,21 @@
     $( window ).load(function() {
         $('#main_content').show();
         setTimeout(function (){$(document).trigger('is-loaded');
-        }, 1000);
+        }, 800);
     });
 
     $(document).ready(function () {
         setTimeout(function (){$("#rocket").fadeIn(800);
-        }, 6000);
-        setTimeout(function (){$("#thumbs_cloud").fadeIn(100);
-        }, 4000);
+        }, 8000);
+        setTimeout(function (){$("#thumbs_cloud").fadeIn(800);
+        }, 8000);
+        setTimeout(function (){$("#join_us").fadeIn(800);
+        }, 7000);
     });
+
+    function submitNo () {
+        setTimeout(function (){$('#Fail').hide();}, 4000);
+    }
 
     function submitSuccess () {
         $('#common_form').hide();
@@ -128,7 +158,7 @@
         $('#load-spin').show();
         setTimeout(function (){$('#load-spin').hide();}, 4000);
         setTimeout(function (){$('#tdd').show();}, 4000);
-        }
+    }
 
     function postData () {
         var selected = new Array();
