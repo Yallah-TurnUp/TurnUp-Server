@@ -18,9 +18,13 @@
         <div id="star_animation" class="site-bg-animation layer" data-depth="0.30"></div>
         <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
         <div id="main_content" data-sr="bottom"></div>
-        <div class="section" id="thumbs">
-            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="z-index: 5; float: left; margin-left: 12%;"><img class="thumb_button_img" src="../../static/img/bg/thumbs_d.png"/></button>
-            <button type="button" class="thumb_button" data-toggle="modal" data-target="#ContactUs" style="float: right; margin-right: 12%; z-index: 5; "><img class="thumb_button_img" src="../../static/img/bg/thumbs_u.png"/></button>
+        <div class="section" id="thumbs_cloud">
+            <button id="thumbs_down" type="button" class="thumb_button" data-toggle="modal" data-target="#Fail" onclick="submitNo();">
+                <img class="thumb_button_img" src="../../static/img/bg/thumbs_down.png"/>
+            </button>
+            <button id="thumbs_up" type="button" class="thumb_button shakee" data-toggle="modal" data-target="#ContactUs" >
+                <img class="thumb_button_img" src="../../static/img/bg/thumbs_up.png"/>
+            </button>
         </div>
         <img id="base-food" src="../../static/img/bg/food_desktop.png" />
         <img id="base-food-S" src="../../static/img/bg/food_mobile.png"/>
@@ -81,6 +85,28 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="Fail" role="dialog" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <img src="../../static/img/bg/Logo.png" style="width: 100px; height: auto;"/>
+                    </div>
+
+                    <div class="modal-body" style="text-align:center;">
+                        <div id='rdd'>
+                            <img src="../../static/img/item/green_tick.png" style="width: 180px; height: auto;"/>
+                            <div class="contact_message">We've got your message, thank you!</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer" style="height: 10vh;">
+                        <h3>To find out more about us, click on the link below:</h3>
+                        <a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -97,7 +123,7 @@
     });
 
     $(document).ready(function () {
-        setTimeout(function (){$("#thumbs").fadeIn(800);
+        setTimeout(function (){$("#thumbs_cloud").fadeIn(800);
         }, 5000);
     });
 

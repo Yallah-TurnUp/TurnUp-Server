@@ -51,27 +51,27 @@
                         <div id="common_form" class="container" style="width: 100%; align-content: center;">
                             <div class="btn-group" data-toggle="buttons">
                                 <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off" checked>
+                                    <input type="checkbox" name="preference" checked value="1">
                                     <span>15:00</span>
                                 </label>
                                 <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off">
+                                    <input type="checkbox" name="preference"  value="2">
                                     <span>15:30</span>
                                 </label>
                                 <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off">
+                                    <input type="checkbox" name="preference"  value="3">
                                     <span>16:00</span>
                                 </label>
                                 <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off">
+                                    <input type="checkbox" name="preference"  value="4">
                                     <span>16:30</span>
                                 </label>
                                 <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off">
+                                    <input type="checkbox" name="preference"  value="5">
                                     <span>17:30</span>
                                 </label>
                                 <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                    <input type="checkbox" autocomplete="off">
+                                    <input type="checkbox" name="preference" value="6">
                                     <span>18:00</span>
                                 </label>
                             </div>
@@ -92,14 +92,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div id='tdd'>
+                        <div id='thank_you'>
                             <img id="form_complete_img" src="../../static/img/item/green_tick.png"/>
                             <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
                             <a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
                         </div>
                     </div>
                     <div class="modal-footer" style="height: 10vh; padding-bottom: 1.5vh;">
-                        <button id="footer_button" type="submit" onclick="submitSuccess();postData()" class="button_splash">CONFIRM</button>
+                        <button id="footer_button" type="submit" onclick="submitSuccess();postData('preference')" class="button_splash">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -116,10 +116,13 @@
                     <div class="modal-body" style="text-align:center;">
                         <div id='rdd'>
                             <img src="../../static/img/item/green_tick.png" style="width: 180px; height: auto;"/>
-                            <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
+                            <div class="contact_message">We've got your message, thank you!</div>
                         </div>
                     </div>
-                    <div class="modal-footer" style="height: 10vh;"><a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a></div>
+                    <div class="modal-footer" style="height: 10vh;">
+                        <h3>To find out more about us, click on the link below:</h3>
+                        <a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -157,15 +160,15 @@
         $('#footer_button').hide();
         $('#load-spin').show();
         setTimeout(function (){$('#load-spin').hide();}, 4000);
-        setTimeout(function (){$('#tdd').show();}, 4000);
+        setTimeout(function (){$('#thank_you').show();}, 4000);
     }
 
-    function postData () {
-        var selected = new Array();
-        $("input:checkbox[name=type]:checked").each(function(){
-            selected.push($(this).val());
-    });
-        console.log(selected);
+    function postData (checkboxName) {
+        var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+        Array.prototype.forEach.call(checkboxes, function(el) {
+        values.push(el.value);
+        });
+        console.log(values);
     }
 </script>
 <!--content End -->
