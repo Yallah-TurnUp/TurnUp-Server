@@ -17,8 +17,11 @@
     <div id="siteBg" class="site-bg" style="background: none;">
         <div id="star_animation" class="site-bg-animation layer" data-depth="0.30"></div>
         <canvas class="site-bg-canvas layer" data-depth="0.30"></canvas>
-        <div id="main_content" data-sr="bottom"></div>
-        <div class="section" id="thumbs_cloud">
+        <div id="main_content" data-sr="bottom">
+            <img id="foody" src="../../static/img/item/food_desktop.png"/>
+            <img id="foody_S" src="../../static/img/item/food_mobile.png"/>
+        </div>
+        <div class="section" id="thumbs_menu">
             <button id="thumbs_down" type="button" class="thumb_button" data-toggle="modal" data-target="#Fail" onclick="submitNo();">
                 <img class="thumb_button_img" src="../../static/img/bg/thumbs_down.png"/>
             </button>
@@ -102,7 +105,7 @@
                     </div>
                     <div class="modal-footer" style="height: 10vh;">
                         <h3>To find out more about us, click on the link below:</h3>
-                        <a href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
+                        <a style="padding-bottom: 2vh;" href="http://dariuspjm.wixsite.com/turnup">TURN UP</a>
                     </div>
                 </div>
             </div>
@@ -119,13 +122,18 @@
 <script>
     $( window ).load(function() {
         $('#main_content').show();
-        $(document).trigger('is-loaded');
+        setTimeout(function (){$(document).trigger('is-loaded');
+        }, 800);
     });
 
     $(document).ready(function () {
-        setTimeout(function (){$("#thumbs_cloud").fadeIn(800);
-        }, 5000);
+        setTimeout(function (){$("#thumbs_menu").fadeIn(800);
+        }, 4000);
     });
+
+    function submitNo () {
+        setTimeout(function (){$('#Fail').hide();}, 4000);
+    }
 
     function submitSuccess () {
         $('#common_form').hide();
@@ -135,6 +143,14 @@
         setTimeout(function (){$('#tdd').hide();}, 5500);
         setTimeout(function () {$('#common_form').fadeIn(10);},5500);
         }
+
+    function postData (checkboxName) {
+        var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
+        Array.prototype.forEach.call(checkboxes, function(el) {
+        values.push(el.value);
+        });
+        console.log(values);
+    }
 </script>
 <!--content End -->
 </body>
