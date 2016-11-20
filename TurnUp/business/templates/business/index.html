@@ -151,8 +151,55 @@
         }, 7000);
     });
 
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+
+    function sendRSVPInfo(attending, commonAvailabilityArray) {
+        var rsvpData = {
+            attending: attending,
+            commonAvailability: commonAvailabilityArray,
+            e: getUrlParameter('e'),
+            i: getUrlParameter('i'),
+            u: getUrlParameter('u')
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/rsvp',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(rsvpData),
+        });
+    }
+
     function submitNo () {
         setTimeout(function (){$('#Fail').hide();}, 4000);
+        sendRSVPInfo(false);
     }
 
     function submitSuccess () {
@@ -166,10 +213,19 @@
     function postData (checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
         Array.prototype.forEach.call(checkboxes, function(el) {
-        values.push(el.value);
+            values.push(el.value);
         });
         console.log(values);
+        sendRSVPInfo(true, values);
     }
+
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
 </script>
 <!--content End -->
 </body>
