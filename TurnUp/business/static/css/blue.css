@@ -28,6 +28,11 @@
  * helper
  * --------------------------------------------------
  */
+#thumbs_menu {
+    position: relative;
+    margin-top: -45vh;
+    display: none;
+}
 #thumbs_up {
     float: right;
     margin-right: 15%;
@@ -42,7 +47,7 @@
     align-content: center;
     margin-top: 15vh;
 }
-#tdd {
+#thank_you {
     display: none;
     margin-top: 5vh;
 }
@@ -163,6 +168,24 @@ input {
     display: none;
     margin-left: auto;
     margin-right: auto;
+}
+#foody {
+    width: auto;
+    height: 55vh;
+    margin-top: 2vh;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+    display: block;
+}
+#foody_S {
+    width: auto;
+    z-index: 5;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    height: 65vh;
+    margin-top: 2vh;
 }
 #base-dark {
     width: 100vw;
@@ -1009,6 +1032,9 @@ input[type=radio] {
     margin:0 auto;
 }
 @media screen and (max-width: 991px) {
+    #thumbs_menu {
+    margin-top: -20vh;
+    }
     #thumbs_up {
         margin-right: -5%;
     }
@@ -1146,7 +1172,7 @@ input[type=radio] {
         width: 180px;
         height: auto;
     }
-    #tdd {
+    #thank_you {
         margin-top: 0;
     }
     #load-spin{
@@ -1170,6 +1196,12 @@ input[type=radio] {
         display: none;
     }
     #cloudy_S {
+        display: block;
+    }
+    #foody {
+        display: none;
+    }
+    #foody_S {
         display: block;
     }
     #base-dark, #base-food{
