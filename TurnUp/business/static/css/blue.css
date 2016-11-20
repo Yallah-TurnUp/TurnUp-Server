@@ -28,6 +28,11 @@
  * helper
  * --------------------------------------------------
  */
+.form_complete_img {
+        width: auto;
+        height: 40%;
+        padding-bottom: 5%;
+    }
 #thumbs_menu {
     position: relative;
     margin-top: -45vh;
@@ -1167,10 +1172,6 @@ input[type=radio] {
     .contact_message {
         font-size: 24px;
         margin-top: 20px;
-    }
-    #form_complete_img {
-        width: 180px;
-        height: auto;
     }
     #thank_you {
         margin-top: 0;
