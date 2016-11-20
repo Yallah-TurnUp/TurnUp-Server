@@ -23,9 +23,16 @@ def food(request):
 def rsvp(request):
     context = {}
     rsvp_data = json.loads(request.body)
-    u = rsvp_data.get('u')
-    e = rsvp_data.get('e')
-    i = rsvp_data.get('i')
+    id = rsvp_data.get('id')
+    if not id:
+        return render(request, 'business/index.html', context)
+    auth = firebase.FirebaseAuthentication(firebase_secret,
+                                           firebase_user, extra={'uid': admin_uid})
+    fb = firebase.FirebaseApplication(firebase_url, authentication=auth)
+    shortcutTarget = fb.get('/shortcutMap', id)
+    u = shortcutTarget.get('u')
+    e = shortcutTarget.get('e')
+    i = shortcutTarget.get('i')
     if not (u and e and i):
         return render(request, 'business/index.html', context)
 
