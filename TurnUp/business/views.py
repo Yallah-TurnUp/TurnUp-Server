@@ -20,12 +20,12 @@ def index(request):
     context = {}
     id = request.GET.get('id')
     if not id:
-        return render(request, 'business/index.html', context)
+        return render(request, 'business/invitation.html', context)
     shortcut_target = fb.get('/shortcutMap', id)
     u = shortcut_target.get('u')
     e = shortcut_target.get('e')
     if not (u and e):
-        return render(request, 'business/index.html', context)
+        return render(request, 'business/invitation.html', context)
     event = fb.get('/events/%s' % u, e)
     type = event.get('type')
     if type == 'FOOD':
@@ -33,7 +33,7 @@ def index(request):
     elif type == 'BUSINESS':
         return render(request, 'business/index.html', context)
     else:
-        return render(request, 'business/index.html', context)
+        return render(request, 'business/invitation.html', context)
 
 
 def food(request):
