@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="modal-footer" style="height: 10vh;">
-                        <button id="footer_button" type="submit" onclick="submitSuccess();postData('preference');postData('car');" class="button_splash">CONFIRM</button>
+                        <button id="footer_button" type="submit" onclick="submitSuccess();" class="button_splash">CONFIRM</button>
                     </div>
                 </div>
             </div>
@@ -143,13 +143,69 @@
         }, 1000);
     });
 
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    var csrftoken = getCookie('csrftoken');
+
+    function csrfSafeMethod(method) {
+        // these HTTP methods do not require CSRF protection
+        return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    }
+    $.ajaxSetup({
+        beforeSend: function(xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+
+    function sendRSVPInfo(attending, commonAvailabilityArray) {
+        var rsvpData = {
+            attending: attending,
+            commonAvailability: commonAvailabilityArray,
+            id: getUrlParameter('id'),
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/rsvp',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(rsvpData),
+        });
+    }
+
     function submitNo () {
+        sendRSVPInfo(false);
         setTimeout(function (){$('#Fail').hide();}, 4000);
     }
 
     function submitSuccess () {
         var dietary = document.getElementById('dietary').value;
-        console.log(dietary);
+        sendRSVPInfo(true, {
+            dietary: dietary,
+            program: getCheckboxData('preference'),
+            parking: getCheckboxData('car'),
+        });
         $('#common_form').hide();
         $('#footer_button').hide();
         $('#load-spin').show();
@@ -157,12 +213,12 @@
         setTimeout(function (){$('#thank_you').show();}, 2000);
     }
 
-    function postData (checkboxName) {
+    function getCheckboxData (checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
-        Array.prototype.forEach.call(checkboxes, function(el) {
-        values.push(el.value);
+        checkboxes.forEach(function(el) {
+            values.push(el.value);
         });
-        console.log(values);
+        return values;
     }
 </script>
 </body>
