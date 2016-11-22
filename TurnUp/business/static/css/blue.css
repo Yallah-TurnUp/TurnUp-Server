@@ -28,24 +28,65 @@
  * helper
  * --------------------------------------------------
  */
+#footer_button {
+    background-color: #19b720;
+    font-size: 16px;
+}
+.btn-warning {
+        font-size: 16px;
+    }
+#header_dietary, #header_time, #header_map{
+    color: #59697b;
+    padding-bottom: 5%;
+}
+#invitation {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    height: 70vh;
+    width: auto;
+}
+#school-logo {
+    position: absolute;
+    bottom: 2vh;
+    right: 2vh;
+    height: 10vh;
+    width: auto;
+}
+#dietary {
+    width: 100%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 14px;
+}
+.my_container {
+    margin: auto;
+  background: transparent;
+    width: 90%;
+    position: relative;
+    padding-bottom: 10%;
+}
+.form_complete_img {
+        width: auto;
+        height: 40%;
+        padding-bottom: 5%;
+    }
 #thumbs_menu {
     position: relative;
     margin-top: -45vh;
     display: none;
 }
 #thumbs_up {
-    float: right;
-    margin-right: 15%;
+    margin-left: 5%;
 }
 #thumbs_down {
-    float: left;
-    margin-left: 15%;
+    margin-right: 5%;
 }
 #load-spin {
     display: none;
     width: 100%;
     align-content: center;
-    margin-top: 15vh;
+    margin-top: 30%;
 }
 #thank_you {
     display: none;
@@ -681,7 +722,7 @@ html {
 }
 .button_splash {
     font-family: 'Gotham', 'Helvetica Neue', 'Open Sans', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     color: #fff;
     background: #3a81ca;
     text-transform: uppercase;
@@ -720,8 +761,8 @@ html {
           backface-visibility: hidden;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  background-image: url(../img/bg/Galaxy_background.png);
-    -webkit-background-size: cover;
+  background-image: url("../img/bg/pitching.png");
+    -we-webkit-background-size: cover;
     background-size: cover;
   top: 0;
   right: 0;
@@ -1032,6 +1073,26 @@ input[type=radio] {
     margin:0 auto;
 }
 @media screen and (max-width: 991px) {
+    #footer_button {
+        font-size: 14px;
+    }
+    .btn-warning {
+        font-size: 11px;
+    }
+    #header_dietary, #header_time, #header_map {
+        font-size: 14px;
+    }
+    .site-bg {
+        background-image: url("../img/bg/pitching_mobile.png");
+    }
+    #school-logo{
+        display: none;
+    }
+    #invitation{
+        height: auto;
+        width: 92vw;
+        right: 4vw;
+    }
     #thumbs_menu {
     margin-top: -20vh;
     }
@@ -1087,7 +1148,6 @@ input[type=radio] {
     }
     .button_splash {
         font-size: 18px;
-        width: inherit;
         padding: 8px 10px;
     }
     .section #your_name, #contact_email, #comment{
@@ -1168,15 +1228,11 @@ input[type=radio] {
         font-size: 24px;
         margin-top: 20px;
     }
-    #form_complete_img {
-        width: 180px;
-        height: auto;
-    }
     #thank_you {
         margin-top: 0;
     }
     #load-spin{
-        margin-top: 2vh;
+        margin-top: 25%;
     }
 }
 @media screen and (max-width: 767px) {

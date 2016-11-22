@@ -35,9 +35,16 @@ def index(request):
     else:
         return render(request, 'business/index.html', context)
 
+
 def food(request):
     context = {}
     return render(request, 'business/food.html', context)
+
+
+def invitation(request):
+    context = {}
+    return render(request, 'business/invitation.html', context)
+
 
 def rsvp(request):
     context = {}
