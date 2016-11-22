@@ -31,11 +31,12 @@
 #footer_button {
     background-color: #19b720;
     font-size: 16px;
+    margin-left: -4px;
 }
 .btn-warning {
         font-size: 16px;
     }
-#header_dietary, #header_time, #header_map{
+#header_dietary, #header_time, #header_map, #header_car{
     color: #59697b;
     padding-bottom: 5%;
 }
@@ -1079,7 +1080,7 @@ input[type=radio] {
     .btn-warning {
         font-size: 11px;
     }
-    #header_dietary, #header_time, #header_map {
+    #header_dietary, #header_time, #header_map, #header_car {
         font-size: 14px;
     }
     .site-bg {
