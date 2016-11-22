@@ -37,7 +37,7 @@
                     <div class="modal-body" style="overflow-y: auto; text-align:center; height: 50vh;">
                         <div id="common_form" class="my_container" style="overflow: hidden;">
                             <div class="my_container">
-                                <h4 id="header_time">There are two parts to our event, please choose the event(s) you will be coming for</h4>
+                                <h4 id="header_time">There are two parts to our event, please choose the event(s) you will be coming for:</h4>
                                 <div class="btn-group-vertical" data-toggle="buttons">
                                     <label class="btn btn-warning active" style="display: inline-block; border-radius: 4px; margin-top: 8px;">
                                         <input type="radio" name="preference" checked value="1">
@@ -61,10 +61,23 @@
                                 <input id="dietary" type="text" placeholder="ie. Peanuts"/>
                             </div>
                             <div class="my_container">
-                                <h4 id="header_map">Scroll down for the map-view of the venue</h4>
+                                <h4 id="header_map">Click below to get directions:</h4>
                                 <a href="https://goo.gl/maps/E1CfCy8ydxv" target="_blank">
-                                    <img style="width: 90%; height: auto; cursor: pointer;" src="../../static/img/item/Capture.PNG" border="3"/>
+                                    <img style="width: 90%; height: auto; cursor: pointer;-webkit-box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);-moz-box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);" src="../../static/img/item/Capture.PNG"/>
                                 </a>
+                            </div>
+                            <div class="my_container" style="padding-bottom: 0px;">
+                                <h4 id="header_car">If you are driving, click below to reserve a parking lot:</h4>
+                                <div class="btn-group-vertical" data-toggle="buttons">
+                                    <label class="btn btn-warning active" style="display: inline-block; border-radius: 4px; margin-top: 8px;">
+                                        <input type="radio" name="car" checked value="1">
+                                        <span>YES</span>
+                                    </label>
+                                    <label class="btn btn-warning" style="display: inline-block; border-radius: 4px; margin-top: 8px;">
+                                        <input type="radio" name="car"  value="2">
+                                        <span>NO</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div id="load-spin" class="container" style="align-content: center;">
@@ -83,7 +96,7 @@
                         </div>
                     </div>
                     <div class="modal-footer" style="height: 10vh;">
-                        <button id="footer_button" type="submit" onclick="submitSuccess();postData('preference')" class="button_splash">CONFIRM</button>
+                        <button id="footer_button" type="submit" onclick="submitSuccess();postData('preference');postData('car');" class="button_splash">CONFIRM</button>
                     </div>
                 </div>
             </div>
