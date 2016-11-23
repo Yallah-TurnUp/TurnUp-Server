@@ -55,6 +55,7 @@
     width: auto;
 }
 #dietary {
+    border:1px solid #ff5f2a;
     width: 100%;
     margin: auto;
     border-radius: 4px;
@@ -1098,10 +1099,12 @@ input[type=radio] {
     margin-top: -20vh;
     }
     #thumbs_up {
-        margin-right: -5%;
+        font-size: 12px;
+        margin-left: 1%;
     }
     #thumbs_down {
-        margin-left: -5%;
+        font-size: 12px;
+        margin-right: 1%;
     }
     #join_us {
         position: absolute;
