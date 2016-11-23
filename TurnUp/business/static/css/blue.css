@@ -762,7 +762,7 @@ html {
           backface-visibility: hidden;
   -webkit-perspective: 1000px;
           perspective: 1000px;
-  background-image: url("../img/bg/pitching.png");
+  background-image: url("../img/bg/pitching.jpg");
     -we-webkit-background-size: cover;
     background-size: cover;
   top: 0;
