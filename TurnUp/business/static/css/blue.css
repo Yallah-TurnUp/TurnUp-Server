@@ -1088,7 +1088,10 @@ input[type=radio] {
         background-image: url("../img/bg/pitching_mobile.png");
     }
     #school-logo{
-        display: none;
+        margin-top: 92vh;
+        position: relative;
+        height: 8vh;
+        width: auto;
     }
     #invitation{
         height: auto;
