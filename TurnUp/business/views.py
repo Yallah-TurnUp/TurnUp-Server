@@ -3,6 +3,7 @@ import json
 from firebase import firebase
 import os
 from TurnUp.settings import BASE_DIR
+from django.views.decorators.csrf import csrf_exempt
 
 with open(os.path.join(BASE_DIR, 'TurnUp/auth.json')) as auth_file:
     auth_info = json.loads(auth_file.read())
@@ -44,6 +45,11 @@ def food(request):
 def invitation(request):
     context = {}
     return render(request, 'business/invitation.html', context)
+
+
+def business(request):
+    context = {}
+    return render(request, 'business/index.html', context)
 
 
 def rsvp(request):
