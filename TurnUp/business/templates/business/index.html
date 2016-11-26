@@ -56,6 +56,12 @@
                         <div id='thank_you'>
                             <img class="form_complete_img" src="../../static/img/item/green_tick.png"/>
                             <div class="contact_message">We've got your message and will contact you shortly, thank you!</div>
+                            <div class="my_container" style="padding-bottom: 0;">
+                                <h4 id="header_map">Click below to get directions:</h4>
+                                <a href="https://goo.gl/maps/yscpKgPHqYG2" target="_blank">
+                                    <img style="width: 90%; height: auto; cursor: pointer;-webkit-box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);-moz-box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);box-shadow: 0px 10px 50px 0px rgba(84,84,84,0.7);" src="../../static/img/item/biggy.PNG"/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div class="modal-footer" style="height: 10vh; padding-bottom: 1.5vh;">
@@ -163,9 +169,6 @@
         $('#load-spin').show();
         setTimeout(function (){$('#load-spin').hide();}, 2000);
         setTimeout(function (){$('#thank_you').show();}, 2000);
-        setTimeout(function (){$('#thank_you').hide();}, 5000);
-        setTimeout(function (){$('#ContactUs').hide();}, 5000);
-
     }
 
     function postData (checkboxName) {
