@@ -182,9 +182,9 @@
 
     function getCheckboxData (checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
-        checkboxes.forEach(function(el) {
+        for (var el of checkboxes) {
             values.push(el.value);
-        });
+        };
         return values;
     }
 </script>
