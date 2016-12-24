@@ -42,30 +42,12 @@
                         <div class="modal-body" style="text-align:center; width:100%;">
                             <div class="container" style="width: 100%; align-content: center;">
                                 <div class="btn-group" data-toggle="buttons">
-                                    <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" checked value="1">
-                                        <span>15:00</span>
+                                    {% for date in dates %}
+                                    <label class="btn btn-warning {% if forloop.first %} active{% endif %}" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
+                                        <input type="checkbox" name="time" autocomplete="off"{% if forloop.first %} checked{% endif %} value="{{ forloop.counter }}">
+                                        <span>{{ date.dateString }}</span>
                                     </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" value="2">
-                                        <span>15:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" value="3">
-                                        <span>16:00</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" value="4">
-                                        <span>16:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" value="5">
-                                        <span>17:30</span>
-                                    </label>
-                                    <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" name="time" autocomplete="off" value="6">
-                                        <span>18:00</span>
-                                    </label>
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div id="load-spin" class="container" style="display: none; width: 100%; align-content: center;">

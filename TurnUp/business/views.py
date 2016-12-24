@@ -18,7 +18,6 @@ fb = firebase.FirebaseApplication(firebase_url, authentication=auth)
 
 # Business index
 def index(request):
-    context = {}
     id = request.GET.get('id')
     if not id:
         return render(request, 'business/invitation.html', context)
@@ -29,6 +28,8 @@ def index(request):
         return render(request, 'business/invitation.html', context)
     event = fb.get('/events/%s' % u, e)
     type = event.get('type')
+    dates = event.get('dates')
+    context = dict(dates=dates)
     if type == 'FOOD':
         return render(request, 'business/food.html', context)
     elif type == 'BUSINESS':
