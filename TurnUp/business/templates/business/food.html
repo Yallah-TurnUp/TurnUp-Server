@@ -43,27 +43,27 @@
                             <div class="container" style="width: 100%; align-content: center;">
                                 <div class="btn-group" data-toggle="buttons">
                                     <label class="btn btn-warning active" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off" checked>
+                                        <input type="checkbox" name="time" autocomplete="off" checked value="1">
                                         <span>15:00</span>
                                     </label>
                                     <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
+                                        <input type="checkbox" name="time" autocomplete="off" value="2">
                                         <span>15:30</span>
                                     </label>
                                     <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
+                                        <input type="checkbox" name="time" autocomplete="off" value="3">
                                         <span>16:00</span>
                                     </label>
                                     <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
+                                        <input type="checkbox" name="time" autocomplete="off" value="4">
                                         <span>16:30</span>
                                     </label>
                                     <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
+                                        <input type="checkbox" name="time" autocomplete="off" value="5">
                                         <span>17:30</span>
                                     </label>
                                     <label class="btn btn-warning" style="border-radius: 4px; margin-right: 4px; margin-left: 4px;">
-                                        <input type="checkbox" autocomplete="off">
+                                        <input type="checkbox" name="time" autocomplete="off" value="6">
                                         <span>18:00</span>
                                     </label>
                                 </div>
@@ -131,8 +131,32 @@
         }, 4000);
     });
 
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    }
+
+    function sendRSVPInfo(attending, commonAvailabilityArray) {
+        console.log('sending mofo');
+        var rsvpData = {
+            attending: attending,
+            commonAvailability: commonAvailabilityArray,
+            id: getUrlParameter('id'),
+        };
+        $.ajax({
+            type: 'POST',
+            url: '/rsvp',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(rsvpData),
+        });
+    }
+
     function submitNo () {
         setTimeout(function (){$('#Fail').hide();}, 4000);
+        sendRSVPInfo(false);
     }
 
     function submitSuccess () {
@@ -142,14 +166,15 @@
         setTimeout(function (){$('#tdd').show();}, 2000);
         setTimeout(function (){$('#tdd').hide();}, 5500);
         setTimeout(function () {$('#common_form').fadeIn(10);},5500);
-        }
+        sendRSVPInfo(true, getCheckboxData('time'));
+    }
 
-    function postData (checkboxName) {
+    function getCheckboxData (checkboxName) {
         var checkboxes = document.querySelectorAll('input[name="' + checkboxName + '"]:checked'), values = [];
-        Array.prototype.forEach.call(checkboxes, function(el) {
-        values.push(el.value);
+        checkboxes.forEach(function(el) {
+            values.push(el.value);
         });
-        console.log(values);
+        return values;
     }
 </script>
 <!--content End -->
