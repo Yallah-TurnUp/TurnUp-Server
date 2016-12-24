@@ -20,7 +20,7 @@ fb = firebase.FirebaseApplication(firebase_url, authentication=auth)
 def index(request):
     id = request.GET.get('id')
     if not id:
-        return render(request, 'business/invitation.html', context)
+        return render(request, 'business/invitation.html', {})
     shortcut_target = fb.get('/shortcutMap', id)
     u = shortcut_target.get('u')
     e = shortcut_target.get('e')
