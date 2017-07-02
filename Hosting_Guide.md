@@ -39,7 +39,7 @@ sudo apt-get install python3-pip
 
 4. Install Django and Firebase
 
-```bash
+```Shell
 sudo pip3 install django==1.10
 sudo pip3 install requests==1.1.0
 sudo pip3 install python-firebase
@@ -81,7 +81,7 @@ Open the file `/etc/nginx/nginx.conf`. The file is readonly by default, so use `
 sudo vi /etc/nginx/nginx.conf
 ```
 The file should look like this:
-```
+```nginx
 user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
@@ -101,7 +101,7 @@ http {
 ...
 ```
 Before the `Basic Settings`, but still within the `server` block, add some configuration to forward traffic to the Django server:
-```
+```nginx
 ...
 http {
     server {
