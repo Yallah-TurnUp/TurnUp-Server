@@ -55,7 +55,7 @@ def business(request):
 
 def rsvp(request):
     context = {}
-    rsvp_data = json.loads(request.body)
+    rsvp_data = json.loads(request.body.decode())
     id = rsvp_data.get('id')
     if not id:
         return render(request, 'business/index.html', context)
