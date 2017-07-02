@@ -10,3 +10,6 @@ Turn down for what
 1. On the root folder of this repository, `cd TurnUp`
 2. Run `python manage.py runserver`
 3. Go to `localhost:8000/api` for joy
+
+## Running server on AWS instance
+Follow the [hosting guide](Hosting_Guide.md).
