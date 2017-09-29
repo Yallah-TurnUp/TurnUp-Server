@@ -121,6 +121,7 @@ http {
         location /static/ {
            root /home/ubuntu/TurnUp-Server/TurnUp/business;
         }
+        }
         ##
         # Basic Settings
         ##
@@ -150,7 +151,7 @@ Navigating to the instance IP address via a web browser should now show a functi
 1. Install gunicorn
 
 ```bash
-sudo pip install gunicorn
+sudo pip3 install gunicorn
 ```
 2. Run the server via gunicorn
 
